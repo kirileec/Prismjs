@@ -70,7 +70,7 @@ class Prismjs_Plugin implements Typecho_Plugin_Interface
     {
         $text = empty($lastResult) ? $text : $lastResult;
 
-        $text = preg_replace('/<code>(c#|py|yml|c\+\+|bat|as|js|markup|css|clike|javascript|actionscript|applescript|aspnet|bash|basic|batch|cpp|csharp|c|coffeescript|ruby|css-extras|go|groovy|java|latex|lua|markdown|objectivec|php|php-extras|powershell|python|sass|scss|sql|swift|yaml)\s/i', '<code class="language-$1">', $text);
+$text = preg_replace('/<code>(c#|py|yml|c\+\+|bat|as|js|nginx|vim|pascal|makefile|http|ini|markup|css|clike|javascript|textfile|git|actionscript|json|applescript|aspnet|bash|basic|batch|cpp|csharp|c|coffeescript|ruby|css-extras|go|groovy|java|latex|lua|markdown|objectivec|php|php-extras|powershell|python|sass|scss|sql|swift|yaml)\s/i', '<code class="language-$1">', $text);
         $text = preg_replace_callback('/<code class="language-([^"]+)">/i', function($m) { return '<code class="language-' . strtolower($m[1]) . '">'; }, $text);
         $text = str_replace('language-c#', 'language-csharp', $text);
         $text = str_replace('language-yml', 'language-yaml', $text);
